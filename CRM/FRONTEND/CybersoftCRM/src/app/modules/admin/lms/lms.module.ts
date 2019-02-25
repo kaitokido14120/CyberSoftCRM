@@ -1,31 +1,28 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-
-
-// component
-import { LmsComponent } from './lms.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import {ButtonModule} from 'primeng/button';
+import { LmsComponent } from 'src/app/components/admin/lms/lms.component';
+import { DashboardComponent } from 'src/app/components/admin/lms/dashboard/dashboard.component';
 
 
 
 const lmsRoutes: Routes = [
   {
-    path: 'lms', component: LmsComponent, children:[
+    path: '', component: LmsComponent, children:[
       {
-        path:'dashboard', component: DashboardComponent
+        path:'dashboard',
+        component: DashboardComponent
       }
     ]
   },
+  
 ];
 
 @NgModule({
-  declarations: [LmsComponent, DashboardComponent],
+  declarations: [LmsComponent,DashboardComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(lmsRoutes),
-    ButtonModule
+    RouterModule.forChild(lmsRoutes)
   ]
 })
 export class LmsModule { }

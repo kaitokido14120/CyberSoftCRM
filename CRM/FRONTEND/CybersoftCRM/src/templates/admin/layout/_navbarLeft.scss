@@ -1,0 +1,127 @@
+$distance_icon: 22px;
+$size_logo: 35px;
+$circle_logo: 50px;
+
+
+#navbarLeft{
+    position: fixed;
+    left: 0;
+    width: $width_navbarLeft;
+    height:100%;
+    background:$color_secondary;
+    box-shadow: -5px 3px 14px 0px rgba(0,0,0,0.45);
+    transition: left $time_transition linear;
+    overflow: scroll;
+    padding-bottom: 30px;
+}
+
+.logoCompany{
+    display: flex;
+    justify-content: center;
+    margin-top:20px;
+}
+
+
+.logoCompany .circle{
+    position: absolute;
+    width:$circle_logo;
+    height:$circle_logo;
+    background:$color_white;
+    border-radius:50%;
+}
+.logoCompany img{
+    position: absolute;
+    width: $size_logo;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+.sidebarLeft{
+    margin-top: 70px;
+    color:$color_white;
+    padding: 0 20px;
+
+
+    // Menu List
+    .menuList{
+        i{
+            margin-right: $distance_icon;
+            width:10px;
+            margin-top:5px;
+            margin-top: 12px;
+        }
+        span{
+            font-weight: 300;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all $time_transition linear;
+
+            &:hover{
+                color: $color_primary;
+            }
+        }
+    }
+
+
+    // Parent list
+    ul > .parentList {
+        margin-top: 40px;
+        .title{
+            font-weight: 300;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+        .dashboard{
+            text-transform: none;
+        }
+    }
+
+    ul > .parentList:nth-of-type(2){
+        margin-top: 40px;
+    }
+
+    ul > .parentList > i{
+        margin-right: $distance_icon;
+        width: 10px;
+    }
+
+    // Children list
+    .childList{
+        margin-left: 31px;
+        font-size: 0.7rem;
+        font-weight: 300;
+        margin-top: 10px;
+        li:not(:last-of-type){
+            position: relative;
+            &:before{
+                position: absolute;
+                content: '';
+                width: 1px;
+                height: 16px;
+                background: white;
+                z-index: -10;
+                left: 5px;
+                top: 13px;
+            }
+        }
+        li{
+            margin-top: 10px;
+            position: relative;
+        }
+      
+        li > i {
+            margin-right: 5px;
+        }
+
+        span{
+            transition: all $time_transition linear;
+            cursor: pointer;
+            &:hover{
+                color:$color_primary;
+            }
+        }
+
+    }
+}
+

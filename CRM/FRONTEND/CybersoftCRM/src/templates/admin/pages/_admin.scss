@@ -1,0 +1,15 @@
+.wrapBody{
+    width: 100%;
+    display: flex;
+}
+
+// navbarLeft
+.navbarLeft{
+    width: $width_navbarLeft;
+    height:100%;
+    transition: width $time_transition linear;
+}
+.contentRight{
+    width: calc(100% - #{$width_navbarLeft});
+    margin-top: 55px;
+}

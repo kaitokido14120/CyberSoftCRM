@@ -7,13 +7,14 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 
 // Modules
+import { PrimengModule } from 'src/core/common/primeng.module';
 import { AdminModule } from './modules/admin/admin.module';
-import { PrimengModule } from './core/common/primeng.module';
+import { TransferDataService } from 'src/core/services/admin/transferData.service';
 
 
 const appRoutes: Routes = [
   {
-    path: 'admin',
+    path:'admin', 
     loadChildren: () => AdminModule
   }
 ];
@@ -21,17 +22,16 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
-    PrimengModule,
     BrowserAnimationsModule,
+    PrimengModule,
     RouterModule.forRoot(appRoutes),
     AdminModule,
-    PrimengModule
   ],
-  providers: [],
+  providers: [TransferDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,145 @@
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $color_gray2;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $color_gray2;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: $color_gray2;
+  }
+
+
+input:focus {
+    outline: none !important;
+    box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.0125), 0 0 8px rgb(11, 142, 255);
+}
+
+
+#myNavbar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: calc(100% - #{$width_navbarLeft});
+    color: $color_white;
+    padding: 6px 15px;
+    border: 1px solid #d6d5d561;
+    transition: width $time_transition linear;
+}
+
+.wrap{
+    margin-left: 55px;
+    position: relative;
+  
+
+    .div1{
+        position: relative;
+        
+    }
+    .div2{
+        position: relative;
+        color: $color_font;
+        display: flex;
+        align-items: center;
+    }
+    .div1{
+        .isearch{
+            position: absolute;
+            right: 14px;
+            top: 8px;
+            color: $color_gray3;
+        }
+    }
+    .div2 {
+        .dropdown{
+            margin-right: 70px;
+        }
+
+        .ialert{
+            color: $color_gray3;
+            font-size: 1.2rem;
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            cursor: pointer;
+        }
+        .badge{
+            background: $color_primary;
+            position: absolute;
+            top:0;
+            right: 0;
+            color: white;
+        }
+    }
+
+    .search{
+        max-width: 300px;
+        width: 300px;
+        height: 32px;
+        border-radius: 20px;
+        border: none;
+        padding: 0 40px 0 22px;
+        background: $color_gray1;
+    }
+
+
+
+    // Hover dropdown
+    .dropdown:hover>.dropdown-menu {
+        display: block;
+    }
+    .dropdown-menu{
+        width: 185px
+    }
+    .dropdown>.dropdown-toggle:active {
+        // pointer-events: none;
+    }
+
+    // animation dropdown
+    .dropdown .dropdown-menu {
+        transition: all 0.3s ease-in-out;
+        max-height: 0;
+        display: block;
+        overflow: hidden;
+        opacity: 0;
+        
+    }
+    .dropdown:hover .dropdown-menu {
+        max-height: 200px;
+        opacity: 1;
+    }
+
+    //Custom dropdown
+    .dropdown-menu{
+        box-shadow: 0 2px 10px -2px rgba(0,0,0,.3);
+        margin-top: 8px;
+        border-radius: 0 !important;
+        border: none;
+        padding: 0;
+        top:23px;
+        left:-2px
+    }
+    .dropdown-toggle::after{
+        // display: none;
+    }
+    .dropdown-item{
+        cursor: pointer;
+        font-size: 0.9rem;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        transition: padding 0.2s linear;  
+        &:hover{
+            padding-left: 30px;
+        }
+        &:active{
+            background: $color_primary;
+            color:white;
+        }
+    }
+
+
+
+}
+
